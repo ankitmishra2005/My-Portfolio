@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ankit Mishra | Developer Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+
+
+    header {
+      background: linear-gradient(to right, #1f2937, #0f172a);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out, ease forwards;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #1e40af;
+      margin-bottom: 20px;
+    }
+
+    .skills ul,
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+
+    body {
+      background-color: #0d1b2a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-section {
+      background-color: #0d1b2a;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      min-height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .hero-image img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #00aaff;
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 25px rgb(216, 4, 4);
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgb(8, 232, 161);
+    }
+
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero-text h1 span {
+      color: #00aaff;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      margin: 15px 0 30px;
+      color: #ccc;
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 2px solid #00aaff;
+      white-space: nowrap;
+      letter-spacing: 2px;
+      animation: typing 3s steps(30, end) 1;
+      font-size: 20px;
+      color: #00aaff;
+    }
+
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 320px;
+      }
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn,
+    .btn-outline {
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn {
+      background-color: #00aaff;
+      color: white;
+    }
+
+    .btn:hover {
+      background-color: #0077cc;
+      box-shadow: 0 8px 24px crimson;
+    }
+
+    .btn-outline {
+      border: 2px solid #00aaff;
+      color: #00aaff;
+    }
+
+    .btn-outline:hover {
+      background-color: #00aaff;
+      color: white;
+      box-shadow: 0 8px 24px crimson;
+    }
+
+
+    .navbar {
+      background-color: #0d1b2a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00aaff;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links li a::after {
+      content: "";
+      height: 2px;
+      width: 0%;
+      background: #00aaff;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: 0.4s;
+    }
+
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links li a:hover {
+      color: #00aaff;
+    }
+
+    .about-section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #0d1b2a;
+      color: white;
+    }
+
+    .about-section h2 {
+      font-size: 36px;
+      color: #00aaff;
+      margin-bottom: 30px;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      max-width: 1000px;
+      margin: auto;
+      flex-direction: row-reverse;
+    }
+
+    .about-text {
+      flex: 1;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .about-text strong {
+      color: #00aaff;
+    }
+
+    .resume-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00aaff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background-color: #0077cc;
+      box-shadow: 0 8px 24px rgb(216, 4, 4);
+    }
+
+    .about-image img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #00aaff;
+      transition: transform 0.3s ease;
+      box-shadow: 0 8px 24px rgb(8, 232, 161);
+
+    }
+
+    .about-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgb(216, 4, 4);
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .stat-box {
+      background-color: #1e2a38;
+      padding: 20px 30px;
+      border-radius: 12px;
+      width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgb(216, 4, 4);
+    }
+
+    .stat-box h3 {
+      font-size: 32px;
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+
+    .stat-box p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+
+    .skills-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .skills-section h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #00aaff;
+    }
+
+    .skills-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .skills-box {
+      background-color: #1e2a38;
+      padding: 30px;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .skills-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgb(216, 4, 4);
+    }
+
+    .skills-box h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #00aaff;
+    }
+
+    .skills-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills-box li {
+      font-size: 18px;
+      margin: 12px 0;
+      text-align: left;
+    }
+
+    .skills-box li i {
+      color: #00aaff;
+      margin-right: 10px;
+    }
+
+
+    .projects-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .projects-section h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #00aaff;
+    }
+
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .project-card {
+      background-color: #1e2a38;
+      color: white;
+      width: 300px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      text-align: left;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgb(216, 4, 4);
+    }
+
+    .project-card i {
+      font-size: 40px;
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+
+    .project-card h3 {
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    .project-card p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      color: #00aaff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      color: #ffffff;
+    }
+
+
+    .certificates-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .certificates-section h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #00aaff;
+    }
+
+    .certificates-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .certificate-card {
+      background-color: #1e2a38;
+      color: white;
+      width: 280px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .certificate-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgb(216, 4, 4);
+    }
+
+    .certificate-card i {
+      font-size: 40px;
+      color: #00aaff;
+      margin-bottom: 15px;
+    }
+
+    .certificate-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .certificate-card p {
+      font-size: 14px;
+      margin-bottom: 15px;
+      color: #bbb;
+    }
+
+    .certificate-card a {
+      display: inline-block;
+      padding: 8px 15px;
+      background-color: #00aaff;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .certificate-card a:hover {
+      background-color: #0077cc;
+      box-shadow: 0 8px 24px rgb(57, 219, 129);
+    }
+
+
+    .contact-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #00aaff;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .contact-info {
+      color: white;
+      font-size: 16px;
+      max-width: 300px;
+      text-align: left;
+    }
+
+    .contact-info p {
+      margin: 15px 0;
+    }
+
+    .contact-info i {
+      color: #00aaff;
+      margin-right: 10px;
+    }
+
+    .contact-info a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #1e2a38;
+      color: white;
+      font-size: 16px;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #aaa;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background-color: #00aaff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #0077cc;
+      box-shadow: 0 8px 24px rgb(216, 4, 4);
+    }
+
+
+    .footer {
+      background-color: #021423;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+      border-top: 1px solid #1e2a38;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .footer p {
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .social-icons a {
+      color: #00aaff;
+      font-size: 20px;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgb(216, 4, 4);
+    }
+
+
+    #backToTop {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 99;
+      font-size: 16px;
+      padding: 10px 15px;
+      background: #1e40af;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+
+<body>
+
+
+  <header class="hero-section" id="home">
+    <div class="hero-container">
+      <!-- Profile Image -->
+      <div class="hero-image">
+        <img src="AnkitPort.jpg" alt="Ankit Mishra">
+      </div>
+
+      <!-- Intro Text -->
+      <div class="hero-text">
+        <h1>Hi, I'm <span>Ankit Mishra</span></h1>
+        <h2 class="typewriter">Aspiring Full Stack Developer</h2>
+        <p>BCA Student | Passionate about Coding & Creativity</p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn">Contact Me</a>
+          <a href="ResumeAnkit.pdf" download class="btn-outline">Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <nav class="navbar">
+    <div class="logo">Ankit's Portfolio</div>
+    <ul class="nav-links"
+      style="display: flex; justify-content: center; gap: 70px; list-style: none; font-size: larger;">
+      <li><a href="#about"><i class="fa-solid fa-circle-info"></i> About </a></li>
+      <li><a href="#skills"><i class="fa-solid fa-code"></i> Skills </a></li>
+      <li><a href="#projects"><i class="fa-solid fa-laptop-code"></i> Projects </a></li>
+      <li><a href="#certificates"><i class="fa-solid fa-award"></i> Certificates </a></li>
+      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact </a></li>
+    </ul>
+  </nav>
+
+
+  <section class="about-section" id="about">
+    <h2>About Me</h2>
+
+    <div class="about-container">
+
+      <div class="about-image">
+        <img src="AnkitPort3.jpg" alt="Ankit Mishra">
+        <!-- Replace with your actual image -->
+      </div>
+
+      <div class="about-text">
+        <p>
+          Hello! I'm <strong>Ankit Mishra</strong>, a passionate BCA student from KES Shroff College, Mumbai.
+          I love creating websites, learning new languages, and working on real-world projects.
+        </p>
+        <p>
+          Currently skilled in HTML, CSS, JavaScript, Java, C, and learning Python. I'm actively looking for part-time
+          jobs and internships to grow professionally and support myself independently.
+          I'm highly motivated, a fast learner, and always ready to explore new technologies.
+        </p>
+
+        <a href="ResumeAnkit.pdf" download class="resume-button">Download Resume</a>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-container">
+      <div class="stat-box">
+        <h3>05+</h3>
+        <p>Projects Completed</p>
+      </div>
+      <div class="stat-box">
+        <h3>05+</h3>
+        <p>Languages Learned</p>
+      </div>
+      <div class="stat-box">
+        <h3>06+</h3>
+        <p>Certificates Earned</p>
+      </div>
+      <div class="stat-box">
+        <h3>01</h3>
+        <p>Internships (Learning)</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="skills-section" id="skills">
+    <h2>My Skills</h2>
+
+    <div class="skills-container">
+      <!-- Tech Skills -->
+      <div class="skills-box">
+        <h3><i class="fas fa-laptop-code"></i> Tech Skills</h3>
+        <ul>
+          <li><i class="fab fa-html5"></i> HTML</li>
+          <li><i class="fab fa-css3-alt"></i> CSS</li>
+          <li><i class="fab fa-js"></i> JavaScript</li>
+          <li><i class="fab fa-java"></i> Java</li>
+          <li><i class="fab fa-python"></i> Python</li>
+          <li><i class="fab fa-github"></i> Git & GitHub</li>
+        </ul>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="skills-box">
+        <h3><i class="fas fa-users"></i> Soft Skills</h3>
+        <ul>
+          <li><i class="fas fa-comments"></i> Communication</li>
+          <li><i class="fas fa-brain"></i> Problem Solving</li>
+          <li><i class="fas fa-lightbulb"></i> Creativity</li>
+          <li><i class="fas fa-handshake"></i> Teamwork</li>
+          <li><i class="fas fa-clock"></i> Time Management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section" id="projects">
+    <h2>My Projects</h2>
+
+    <div class="projects-container">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <i class="fas fa-hospital"></i>
+        <h3>Hospital Management System</h3>
+        <p>Built with HTML, CSS. Includes patient list, admission details, and responsive pages.</p>
+
+        <a href="https://ankitmishra2005.github.io/Hospital-Management-System" target="_blank">🔗 Live
+          Demo</a>&nbsp;&nbsp;
+        <a href="https://github.com/ankitmishra2005/Hospital-Management-System" target="_blank">💻 View Code</a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <i class="fas fa-user-graduate"></i>
+        <h3>Student Management System (C)</h3>
+        <p>Uses arrays, linked lists, stack for undo, and queue for course registration.</p>
+        <a href="https://github.com/ankitmishra2005/Student-Management-System" target="_blank">💻 View Project</a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <i class="fas fa-briefcase"></i>
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio created with HTML, CSS, and JavaScript showcasing skills and work.</p>
+        <a href="https://ankitmishraportfolio.com" target="_blank">Live Demo</a>
+      </div>
+
+      <div class="project-card">
+        <i class="fas fa-user-lock"></i>
+        <h3>Responsive Login Page</h3>
+        <p>Built with HTML, CSS. User Name, Password, Sign in, and responsive pages.</p>
+        <a href=" https://ankitmishra2005.github.io/Responsive-Login-Page" target="_blank">🔗 Live Demo</a>&nbsp;&nbsp;
+        <a href="https://github.com/ankitmishra2005/Responsive-Login-Page/" target="_blank">💻 View Code</a>
+      </div>
+
+      <div class="project-card">
+        <i class="fas fa-video"></i>
+        <h3>Marvel Studio </h3>
+        <p>Built with HTML, CSS, and JavaScript. Marvel Characters, Credits, Characters Name, Photos.</p>
+        <a href="https://ankitmishra2005.github.io/Marvel-Studio/" target="_blank">🔗 Live Demo</a>&nbsp;&nbsp;
+        <a href="https://github.com/ankitmishra2005/Marvel-Studio" target="_blank">💻 View Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="certificates-section" id="certificates">
+    <h2>My Certificates</h2>
+
+    <div class="certificates-container">
+      <!-- Certificate 1 -->
+      <div class="certificate-card">
+        <i class="fas fa-award"></i>
+        <h3><i class="fab fa-html5" style="font-size: 20px;"></i> Html5 </h3>
+        <p> Certified by Coddy · <br> 2024</p>
+        <a href="https://coddy.tech/certifications/1J4YbZ-cTiZhY" target="_blank">View Certificate</a>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="certificate-card">
+        <i class="fas fa-award"></i>
+        <h3><i class="fab fa-css3-alt" style="font-size: 20px;"></i> CSS </h3>
+        <p>Certified by Coddy · <br> 2024</p>
+        <a href="https://coddy.tech/certifications/1J4YbZ-9yHGYz" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="certificate-card">
+        <i class="fas fa-award"></i>
+        <h3> <i class="fas fa-project-diagram" style="font-size: 18px;"></i> Basic of OOPs </h3>
+        <p>Certified by Great Learning · 2024</p>
+        <a href="https://coddy.tech/certifications/1J4YbZ-UrgIfa" target="_blank">View Certificate</a>
+      </div>
+
+      <div class="certificate-card">
+        <i class="fas fa-certificate"></i>
+        <h3> <i class="fas fa-code" style="font-size: 18px;"></i> C Programming </h3>
+        <p>Certified by Great Learning · 2024</p>
+        <a href=" " target="_blank">View Certificate</a>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="certificate-card">
+        <i class="fas fa-award"></i>
+        <h3><i class="fab fa-java"></i> Java Programming</h3>
+        <p>Certified by Coursera · 2025</p>
+        <a href="https://coddy.tech/certifications/1J4YbZ-cpiHhr" target="_blank">View Certificate</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <h2>Contact Me</h2>
+
+    <div class="contact-container">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i>
+          Email: <a href="mailto:ankitmishrabansi2005@gmail.com">ankitmishrabansi2005@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> +91 9565890957</p>
+        <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/ankit-mishra-b01621325"
+            target="_blank">LinkedIn</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/ankitmishra2005" target="_blank">GitHub</a></p>
+      </div>
+
+      <!-- Optional Contact Form -->
+
+      <form action="https://formspree.io/f/mpwrnjjy" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message (Feel Free To Connect)" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p> </p>
+
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/ankit-mishra-b01621325" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/ankitmishra2005" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:ankitmishrabansi2005@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top">⬆️</button>
+
+  <script>
+    // Show/hide Back to Top button
+    const backToTop = document.getElementById("backToTop");
+    window.onscroll = function () {
+      backToTop.style.display = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
+        ? "block" : "none";
+    };
+
+    backToTop.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Auto Year in Footer
+    const year = new Date().getFullYear();
+    document.querySelector('footer p').innerHTML = `© ${year} Ankit Mishra. All rights reserved.`;
+
+    // Dark Mode Toggle
+    const toggleMode = document.createElement('button');
+    toggleMode.innerText = '🌓 Dark Mode';
+    toggleMode.style.cssText = 'position:fixed;bottom:30px;right:20px;padding:8px 12px;border:none;background:#1e40af;color:#fff;border-radius:6px;cursor:pointer;';
+    document.body.appendChild(toggleMode);
+
+    toggleMode.onclick = () => {
+      document.body.classList.toggle('dark');
+      toggleMode.innerText = document.body.classList.contains('dark') ? '🌞 Light Mode' : '🌓 Dark Mode';
+    };
+
+    // Dark Mode Styling
+    const style = document.createElement('style');
+    style.innerHTML = `
+    .dark {
+      background-color: #111827;
+      color: #f3f4f6;
+    }
+    .dark a { color: #93c5fd; }
+    .dark header, .dark footer { background-color: #000; }
+    .dark .card { background-color: #1f2937; }
+  `;
+    document.head.appendChild(style);
+  </script>
+
+
+</body>
+
+</html>
